@@ -9,14 +9,16 @@ import Vector from '../assets/Vector.svg';
 import Frame from '../assets/Frame.svg';
 import Star from '../assets/Star.svg';
 import reset  from '../assets/reset.svg';
+import ExploreCategories from './ExploreCategories';
+import YourNext from './YourNext';
 
-// Dummy image URLs
+
 const jeansImageUrl = jeans;
 const tshirtImageUrl = tshirt;
 const dressImageUrl = dress;
 const pantImageUrl = pant;
 
-// Keyframes for rotating rings
+
 const rotate = keyframes`
   from {
     transform: rotate(0deg);
@@ -26,30 +28,30 @@ const rotate = keyframes`
   }
 `;
 
-// Styled Components for the Hero Section
+
 const HeroContainer = styled.div`
   position: relative;
-  width: 100%;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   background-color: #080808;
+  padding-top: 220px;
+  padding-bottom: 190px;
 `;
 
 const JoinNowButton = styled.button`
   width: 185px;
   height: 44px;
   position: absolute;
-  top: 10px;
-  right: 40px;
-  background-color: #ffffff1a;
+  top: 40px;
+  right: 50px;
+  background-color:rgba(255, 255, 255, 0.23);
   color: white;
   padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.23);
+  border-radius: 10px;
   cursor: pointer;
   font-size: 20px;
   transition: background-color 0.3s ease;
@@ -62,7 +64,7 @@ const HeroContentWrapper = styled.div`
   align-items: center;
   z-index: 2;
   padding: 0 20px;
-  max-width: 80%;
+  max-width: 100%;
   text-align: center;
 `;
 
@@ -73,6 +75,9 @@ const Heading = styled.h1`
   font-weight: 800;
   color: white;
   margin-bottom: 1rem;
+  span {
+    color: #b4ff00;
+  }
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
   @media (max-width: 768px) {
     font-size: 2.5rem;
@@ -83,11 +88,14 @@ const Heading = styled.h1`
 `;
 
 const LetsGoButton = styled.button`
-  background-color: #00ff00;
+  
+  background-color:#B2EE32;
+  width: 180px;
+  height: 50px;
   color: black;
   padding: 1rem 2.5rem;
   border: none;
-  border-radius: 25px;
+  border-radius: 15px;
   font-size: 1.2rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -102,7 +110,7 @@ const LetsGoButton = styled.button`
   }
 `;
 
-// Styled Components for the Rings
+
 const Ring = styled.div`
   position: absolute;
   border-radius: 50%;
@@ -111,8 +119,8 @@ const Ring = styled.div`
 `;
 
 const OuterRing = styled(Ring)`
-  top: 50%;
-  left: 50%;
+  top: 0
+  left: 0;
   transform: translate(-50%, -50%) scale(1.6) rotate(30deg);
   width: 100vh;
   height: 60vh;
@@ -120,8 +128,8 @@ const OuterRing = styled(Ring)`
 `;
 
 const MiddleRing = styled(Ring)`
-  top: 50%;
-  left: 50%;
+  top: 20%;
+  left: 35%;
   transform: translate(-50%, -50%) scale(1.2) rotate(-20deg);
   width: 80vh;
   height: 48vh;
@@ -129,15 +137,24 @@ const MiddleRing = styled(Ring)`
 `;
 
 const InnerRing = styled(Ring)`
-  top: 50%;
-  left: 50%;
+  top: 30%;
+  left: 40%;
   transform: translate(-50%, -50%) scale(0.8) rotate(10deg);
   width: 60vh;
   height: 36vh;
-  animation-duration: 20s;
+  animation-duration: 20s;bigerRing
 `;
 
-// Styled Components for the Floating Images
+const BigerRing = styled(Ring)`
+  top: 20%;
+  left: 30%;
+  transform: translate(-50%, -50%) scale(0.8) rotate(10deg);
+  width: 100vh;
+  height: 60vh;
+  animation-duration: 20s;bigerRing
+`;
+
+
 const FloatingImage = styled.img`
   position: absolute;
   background-color:#3F3F46;
@@ -149,7 +166,7 @@ const FloatingImage = styled.img`
 const DressImage = styled(FloatingImage)`
   width: 48px;
   top: 20%;
-  left: 10%;
+  left: 20%;
   transform: rotate(-10deg);
   @media (max-width: 480px) {
     width: 20vh;
@@ -160,8 +177,8 @@ const DressImage = styled(FloatingImage)`
 
 const JeansImage = styled(FloatingImage)`
   width: 48px;
-  top: 30%;
-  right: 15%;
+  top: 20%;
+  right: 20%;
   transform: rotate(20deg);
   @media (max-width: 480px) {
     width: 24vh;
@@ -184,8 +201,8 @@ const HatImage = styled(FloatingImage)`
 
 const ShoesImage = styled(FloatingImage)`
  width: 48px;
-  bottom: 10%;
-  right: 5%;
+  bottom: 20%;
+  right: 15%;
   radius: 50%;
   border: 1px solid rgba(255,255,255,0,1);
   transform: rotate(-25deg);
@@ -196,7 +213,7 @@ const ShoesImage = styled(FloatingImage)`
   }
 `;
 
-// Styled Components for the "Style That Understands You" Section (Integrated)
+
 const StyleSection = styled.div`
   background-color: #080808;
   color: white;
@@ -207,49 +224,63 @@ const StyleSection = styled.div`
 `;
 
 const StyleTitle = styled.h2`
-  font-size: 2.5rem;
-  font-weight: bold;
+  font-size: 54px;
+  font-weight: 700;
   margin-bottom: 20px;
   text-align: center;
 `;
 
 const StyleSubtitle = styled.p`
-  font-size: 1rem;
+  font-size: 24px;
   color: #ccc;
   margin-bottom: 40px;
   text-align: center;
   max-width: 600px;
+  span {
+    color: #b4ff00;
+  }
 `;
 
 const SeeHowItWorksButton = styled.button`
-  background-color: #00ff00;
+  width: 203px;
+  height: 65px;
+  background-color: #B2EE32;
   color: black;
   padding: 15px 30px;
   border: none;
-  border-radius: 8px;
+  border-radius: 20px;
   font-size: 1rem;
   cursor: pointer;
   margin-top: 30px;
+  margin-bottom: 40px;
   transition: background-color 0.3s ease;
 
   &:hover {
-    background-color: #00b300;
+    background-color: #00b300;S
   }
+`;
+
+const StyleTitle2 = styled.h2`
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-align: center;
 `;
 
 const FeaturesGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
-  width: 100%;
   max-width: 1200px;
   margin-top: 60px;
 `;
 
 const FeatureCard = styled.div`
-  background-color: #181818;
+  background-color:rgba(161, 161, 161, 0.14);
+  width: 256px;
+  height: 220px;
   padding: 30px;
-  border-radius: 10px;
+  border-radius: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -257,10 +288,10 @@ const FeatureCard = styled.div`
 `;
 
 const IconWrapper = styled.div`
-  background-color: #282828;
+  size: 27px;
   border-radius: 50%;
   padding: 15px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -269,7 +300,7 @@ const IconWrapper = styled.div`
 const FeatureTitle = styled.h3`
   font-size: 1.2rem;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 `;
 
 const FeatureDescription = styled.p`
@@ -285,11 +316,12 @@ const HomePage = () => {
         <OuterRing />
         <MiddleRing />
         <InnerRing />
+        <BigerRing />
 
         <HeroContentWrapper>
           <Heading>
             There are too many <br /> mediocre things in life, <br />
-            Your Outfit shouldn't be one of them!
+            Your <span>Outfit</span> shouldn't be one of them!
           </Heading>
 
           <LetsGoButton>Let's Go!</LetsGoButton>
@@ -301,16 +333,16 @@ const HomePage = () => {
         <ShoesImage src={pantImageUrl} alt="pant" />
       </HeroContainer>
 
-      {/* "Style That Understands You" Section Integrated Here */}
+      
       <StyleSection>
         <img src={star} alt="star" style={{ marginBottom: '20px', height: '110px', width: 'auto', color: '#00ff00' }} />
         <StyleTitle>Style That Understands You.</StyleTitle>
         <StyleSubtitle>
           OutfitQ is your AI stylist that curates outfits based on{' '} <br />
-          <b>YOU</b> - your vibe, body, mood & moment.
+          <span>YOU</span> - your vibe, body, mood & moment.
         </StyleSubtitle>
         <SeeHowItWorksButton>See How It Works</SeeHowItWorksButton>
-        <StyleTitle style={{ marginTop: '80px', marginBottom: '20px' }}>There's Something For <br /> Everyone Here.</StyleTitle>
+        <StyleTitle2 style={{ marginTop: '80px', marginBottom: '20px' }}>There's Something For <br /> Everyone Here.</StyleTitle2>
         <FeaturesGrid>
           <FeatureCard>
             <IconWrapper>
@@ -349,8 +381,10 @@ const HomePage = () => {
             </FeatureDescription>
           </FeatureCard>
         </FeaturesGrid>
+        
       </StyleSection>
-      {/* <ExploreCategories /> */}
+      <ExploreCategories />
+      <YourNext/>
     </div>
   );
 };

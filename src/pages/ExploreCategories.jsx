@@ -22,28 +22,30 @@ const Title = styled.h2`
 `;
 
 const Subtitle = styled.p`
-  font-size: 0.9rem;
+  font-size: 18px;
   color: #ccc;
   margin-bottom: 30px;
   text-align: center;
 `;
 
 const CategoryButton = styled.button`
+  width: 266px;
+  height: 74px; 
   background-color: ${(props) => (props.isActive ? '#00ff00' : '#181818')};
   color: #FFFFFF;
-  border: none;
+  border: 1px solid rgba(13, 14, 0, 0.92);
   border-radius: 20px;
   padding: 10px 20px;
-  font-size: 0.9rem;
+  font-size: 20px;
   cursor: pointer;
   margin: 5px;
-  display: flex;
+  
   align-items: center;
   gap: 8px;
   transition: background-color 0.3s ease;
 
   &:hover {
-    background-color: #00b300;
+    background-color:rgba(140, 179, 0, 0.38);
   }
 `;
 
@@ -59,8 +61,7 @@ const OutfitSlider = styled.div`
   align-items: center;
   gap: 20px;
   margin-bottom: 30px;
-  width: 90%;
-  max-width: 900px;
+ 
   position: relative;
 `;
 
@@ -78,9 +79,9 @@ const OutfitImage = styled.img`
 
 const SliderButton = styled.button`
   background: none;
-  border: none;
+  border: 1px solid white;
   color: white;
-  font-size: 1.5rem;
+  font-size: 2rem;
   cursor: pointer;
   padding: 10px;
   opacity: 0.7;
@@ -98,11 +99,11 @@ const SliderButton = styled.button`
   transform: translateY(-50%);
 
   &.left {
-    left: 10px;
+    left: -50px;
   }
 
   &.right {
-    right: 10px;
+    right: -50px;
   }
 
   svg {
@@ -113,10 +114,12 @@ const SliderButton = styled.button`
 `;
 
 const ExploreMoreButton = styled.button`
-  background-color: #00ff00;
+  background-color: #B2EE32;
+  width: 221px;
+  height: 62px;
   color: black;
   border: none;
-  border-radius: 8px;
+  border-radius: 20px;
   padding: 15px 30px;
   font-size: 1rem;
   cursor: pointer;
@@ -129,18 +132,19 @@ const ExploreMoreButton = styled.button`
 `;
 
 const SeeItSection = styled.div`
+  margin-top: 40px;
   text-align: center;
   margin-bottom: 40px;
 `;
 
 const SeeItTitle = styled.h3`
-  font-size: 1.2rem;
-  font-weight: bold;
+  font-size: 38px;
+  font-weight: 600;
   margin-bottom: 10px;
 `;
 
 const SeeItSubtitle = styled.p`
-  font-size: 0.9rem;
+  font-size: 18px;
   color: #ccc;
   margin-bottom: 20px;
 `;
@@ -148,12 +152,14 @@ const SeeItSubtitle = styled.p`
 const LinkInputContainer = styled.div`
   display: flex;
   gap: 10px;
-  width: 90%;
-  max-width: 500px;
+  width: 547px;
+  height:52px;
+  radius: 15px;
+ 
 `;
 
 const LinkInput = styled.input`
-  background-color: #181818;
+  background-color:rgba(71, 62, 62, 0.44);
   color: white;
   border: none;
   border-radius: 8px;
@@ -167,10 +173,12 @@ const LinkInput = styled.input`
 `;
 
 const GenerateButton = styled.button`
-  background-color: #00ff00;
+  width: 170px;
+  height: 52px;
+  background-color: #B2EE32;
   color: black;
   border: none;
-  border-radius: 8px;
+  border-radius: 15px;
   padding: 10px 20px;
   font-size: 0.9rem;
   cursor: pointer;
@@ -181,7 +189,6 @@ const GenerateButton = styled.button`
   }
 `;
 const SectionHIW = styled.section`
-  background: linear-gradient(135deg, #0a0a0a, #111b0f);
   padding: 60px 20px;
   color: white;
   text-align: center;
@@ -189,15 +196,15 @@ const SectionHIW = styled.section`
 `;
 
 const TitleHIW = styled.h2`
-  font-size: 32px;
+  font-size: 38px;
   font-weight: 700;
   margin-bottom: 40px;
 `;
 
 const StepsContainerHIW = styled.div`
-  background: #121212;
+  background:rgba(61, 55, 55, 0.14);
   border-radius: 16px;
-  padding: 40px 20px;
+  padding: 10px 20px;
   max-width: 600px;
   margin: 0 auto;
   text-align: left;
@@ -211,14 +218,14 @@ const StepCardHIW = styled.div`
   transition: background 0.3s, border-left 0.3s;
 
   &:first-child {
-    background: #1d1f1d;
+    background:rgb(42, 44, 42);
     border-left: 4px solid #b3ff3a;
     border-radius: 8px;
     padding-left: 12px;
   }
 
   &:not(:first-child):hover {
-    background: #1d1f1d;
+    background:rgb(42, 45, 42);
     border-left: 4px solid #b3ff3a;
     border-radius: 8px;
     padding-left: 12px;
@@ -245,13 +252,15 @@ const StepDescriptionHIW = styled.p`
 `;
 
 const BuildOutfitButtonHIW = styled.button`
-  margin-top: 40px;
+  width: 203px;
+  height: 62px;
+  margin-top: 15px;
   padding: 12px 24px;
-  background-color: #b3ff3a;
+  background-color: #B2EE32;
   color: #000;
   font-weight: bold;
   border: none;
-  border-radius: 8px;
+  border-radius: 15px;
   font-size: 16px;
   cursor: pointer;
   transition: background 0.3s;
@@ -289,14 +298,14 @@ const ExploreCategories = () => {
     { name: 'Statement Looks', icon: () => (<span style={{ fontSize: '1.2em' }}>💪</span>) },
   ];
 
-  // SVG code for the left arrow
+  
   const LeftArrowSVG = (
     <svg viewBox="0 0 24 24">
       <path fill="currentColor" d="M15.41 16.59L10.83 12L15.41 7.41L14 6L8 12L14 18L15.41 16.59Z"/>
     </svg>
   );
 
-  // SVG code for the right arrow
+  
   const RightArrowSVG = (
     <svg viewBox="0 0 24 24">
       <path fill="currentColor" d="M8.59 16.59L13.17 12L8.59 7.41L10 6L16 12L10 18L8.59 16.59Z"/>
@@ -309,7 +318,7 @@ const ExploreCategories = () => {
       <Subtitle>Your moodboard, made real</Subtitle>
       <CategoriesRow>
         {categories.map((category) => (
-          <CategoryButton key={category.name} isActive={category.isActive}>
+          <CategoryButton key={category.name} isactive={category.isActive}>
             {category.icon && category.icon()}
             {category.name}
           </CategoryButton>

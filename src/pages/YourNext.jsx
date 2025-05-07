@@ -4,6 +4,7 @@ import React from 'react';
  import blackcloth5 from '../assets/blackcloth5.png';
 
  const Section = styled.div`
+  min-width: 100%;
   background-color: #000000;
   color: white;
   padding: 80px 20px;
@@ -14,16 +15,17 @@ import React from 'react';
  `;
 
  const ImageSliderContainer = styled.div`
+  
   display: flex;
   gap: 10px;
   margin-bottom: 40px;
-  overflow-x: auto; /* Enable horizontal scrolling for smaller screens */
-  -webkit-overflow-scrolling: touch; /* For smooth scrolling on iOS */
-  padding: 10px 0; /* Add some padding around the images */
+  overflow-x: auto; 
+  -webkit-overflow-scrolling: touch; 
+  padding: 10px 0; 
  `;
 
  const SliderImageWrapper = styled.div`
-  background-color: #181818; /* Dark background for the rounded corners */
+  background-color: #181818; 
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
@@ -31,7 +33,7 @@ import React from 'react';
  `;
 
  const SliderImage = styled.img`
-  width: 150px; /* Adjust as needed to match the image size in the screenshot */
+  width: 140px; 
   height: auto;
   display: block;
  `;
@@ -40,6 +42,7 @@ import React from 'react';
   font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 20px;
+  line-height:1.1;
  `;
 
  const Subtitle = styled.p`
@@ -47,10 +50,14 @@ import React from 'react';
   color: #ccc;
   margin-bottom: 40px;
   max-width: 600px;
+
+  
  `;
 
  const LetsGoButton = styled.button`
-  background-color: #00ff00;
+  width: 203px;
+  height: 62px;
+  background-color: #B2EE32;
   color: black;
   padding: 15px 30px;
   border: none;
@@ -64,15 +71,7 @@ import React from 'react';
   }
  `;
 
- const Footer = styled.div`
-  font-size: 1rem;
-  color: #888;
-  margin-top: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
- `;
+ 
 
  const YourNext = () => {
   return (
@@ -103,7 +102,7 @@ import React from 'react';
       <SliderImage src={blackcloth5} alt="Outfit 8" />
      </SliderImageWrapper>
     </ImageSliderContainer>
-    <Title>Your Next Outfit Is Just Click Away!</Title>
+    <Title>Your Next Outfit Is Just <br />Click Away!</Title>
     <Subtitle>Style inspo, shopping, and a personal stylist - all in one place</Subtitle>
     <LetsGoButton>Let's Go!</LetsGoButton>
    </Section>
